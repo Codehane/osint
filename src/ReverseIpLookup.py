@@ -29,4 +29,3 @@ class Reverse_Ip_Check:
         req_dict['host_ip'] = req.json()['hostip']
         return req_dict
 
-pprint(Reverse_Ip_Check.get_domains('serhatsonmez.com'))
