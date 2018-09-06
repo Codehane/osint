@@ -1,14 +1,16 @@
 import requests
+import json
 
 class Reverse_Ip_Check:
     @staticmethod
     def get_domains(domain_or_ip):
-        req = requests.get('http://reverseip.logontube.com/?url={}&output=json'.format(domain_or_ip))
         req_dict = {
             'status' : '',
             'domains' : [],
             'host_ip' : ''
         }
+
+        req = requests.get('http://reverseip.logontube.com/?url={}&output=json'.format(domain_or_ip))
 
         if req.status_code != 200:
             req_dict['status'] = 'Fail - ' + str(req.status_code)

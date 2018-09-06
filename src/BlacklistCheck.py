@@ -25,3 +25,4 @@ class BlacklistCheck:
     def blacklist_report(self):
         engine_list = self.soup.find_all('table')[1].find_all('i', class_="fa fa-minus-circle text-danger")
         return {j.parent.text : j.parent.next_sibling.a['href'] for j in engine_list}
+        
